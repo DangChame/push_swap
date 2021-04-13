@@ -17,9 +17,11 @@ void	ra(t_ListStack *stack_a)
 	t_list	*first;
 	t_list	*last_before;
 	t_list	*last;
+	t_list	*second;
 
 	last_before = stack_a->top;
 	first = stack_a->top;
+	second = first->next;
 	while (last_before->next->next != NULL)
 	{
 		last_before = last_before->next;
@@ -27,4 +29,5 @@ void	ra(t_ListStack *stack_a)
 	last = last_before->next;
 	last_before->next = first;
 	stack_a->top = last;
+	stack_a->top->next = second;
 }
