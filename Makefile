@@ -5,6 +5,7 @@ SRCS		=	check_utils.c \
 				make_list.c \
 				push_swap.c \
 				game.c \
+				game2.c\
 
 
 OBJS	= ${SRCS:.c=.o}

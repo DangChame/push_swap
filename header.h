@@ -64,4 +64,9 @@ void		ss(t_ListStack *stack_a, t_ListStack *stack_b);
 void		pa(t_ListStack *stack_a, t_ListStack *stack_b);
 void		pb(t_ListStack *stack_a, t_ListStack *stack_b);
 
+/*
+	game2.c
+*/
+void		ra(t_ListStack *stack_a);
+
 #endif
