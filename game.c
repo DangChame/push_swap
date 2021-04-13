@@ -69,4 +69,4 @@ void	pb(t_ListStack *stack_a, t_ListStack *stack_b)
 		data = pop_list(stack_a);
 		push_list(stack_b, data);
 	}
-}
+}asd
