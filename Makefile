@@ -7,20 +7,14 @@ SRCS		=	check_utils.c \
 				game.c \
 
 
-OBJS		=	check_utils.o \
-				ft_atoi.o \
-				make_list.o \
-				push_swap.o \
-				game.o \
+OBJS	= ${SRCS:.c=.o}
 
 INCLUDES	=	header.h
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-
-$(OBJS): $(SRCS) $(INCLUDES)
-	@gcc -Wall -Wextra -Werror $(SRCS) -o push_swap
+	gcc -Wall -Wextra -Werror $(SRCS) -o push_swap
 
 clean:
 	rm -rf $(OBJS)

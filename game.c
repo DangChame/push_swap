@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 00:11:11 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/14 00:11:11 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/14 00:55:23 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	pa(t_ListStack *stack_a, t_ListStack *stack_b)
 {
 	int		data;
 
-	if (is_empty_stack_list(stack_b) != -1)
+	if (is_empty_stack_list(stack_b) != 1)
 	{
 		data = pop_list(stack_b);
 		push_list(stack_a, data);
@@ -64,9 +64,9 @@ void	pb(t_ListStack *stack_a, t_ListStack *stack_b)
 {
 	int		data;
 
-	if (is_empty_stack_list(stack_a) == -1)
+	if (is_empty_stack_list(stack_a) != 1)
 	{
 		data = pop_list(stack_a);
 		push_list(stack_b, data);
 	}
-}asd
+}
