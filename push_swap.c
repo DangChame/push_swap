@@ -16,7 +16,7 @@
 int		main(int ac, char **av)
 {
 	t_ListStack	*stack_a;
-	t_ListStack	*stack_b;
+/*	t_ListStack	*stack_b;*/
 	
 	stack_a = make_stack(ac, av);
 	if (check_twice(stack_a) == -1)
@@ -25,7 +25,7 @@ int		main(int ac, char **av)
 		free(stack_a);
 		return (0);
 	}
-	stack_b = create_list_stack();
+/*	stack_b = create_list_stack();*/
 	while (is_empty_stack_list(stack_a) != 1)
 	{
 		printf("%d\n", pop_list(stack_a));
