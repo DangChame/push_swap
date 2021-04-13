@@ -11,7 +11,7 @@ OBJS		=	check_utils.o \
 				ft_atoi.o \
 				make_list.o \
 				push_swap.o \
-				game.c \
+				game.o \
 
 INCLUDES	=	header.h
 
