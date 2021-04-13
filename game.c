@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-void	sa(t_ListStack *stack_a)
+void	sa(t_ListStack *stack_a, int msg)
 {
 	t_list		*temp;
 	t_list		*temp2;
@@ -24,10 +24,11 @@ void	sa(t_ListStack *stack_a)
 	stack_a->top = temp2;
 	stack_a->top->next = temp;
 	temp->next = temp3;
-	write(1,"sa\n", 3);
+	if (msg == 1)
+		write(1,"sa\n", 3);
 }
 
-void	sb(t_ListStack *stack_b)
+void	sb(t_ListStack *stack_b, int msg)
 {
 	t_list		*temp;
 	t_list		*temp2;
@@ -39,13 +40,14 @@ void	sb(t_ListStack *stack_b)
 	stack_b->top = temp2;
 	stack_b->top->next = temp;
 	temp->next = temp3;
-	write(1,"sb\n", 3);
+	if (msg == 1)
+		write(1,"sb\n", 3);
 }
 
 void	ss(t_ListStack *stack_a, t_ListStack *stack_b)
 {
-	sa(stack_a);
-	sb(stack_b);
+	sa(stack_a, -1);
+	sb(stack_b, -1);
 	write(1, "ss\n", 3);
 }
 
@@ -57,7 +59,9 @@ void	pa(t_ListStack *stack_a, t_ListStack *stack_b)
 	{
 		data = pop_list(stack_b);
 		push_list(stack_a, data);
+		write(1,"pa\n", 3);
 	}
+	
 }
 
 void	pb(t_ListStack *stack_a, t_ListStack *stack_b)
@@ -68,5 +72,6 @@ void	pb(t_ListStack *stack_a, t_ListStack *stack_b)
 	{
 		data = pop_list(stack_a);
 		push_list(stack_b, data);
+		write(1,"pb\n", 3);
 	}
 }

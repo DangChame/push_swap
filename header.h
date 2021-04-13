@@ -58,8 +58,8 @@ t_ListStack	*make_stack(int ac, char **av);
 /*
 	game.c
 */
-void		sa(t_ListStack *stack_a);
-void		sb(t_ListStack *stack_b);
+void		sa(t_ListStack *stack_a, int msg);
+void		sb(t_ListStack *stack_b, int msg);
 void		ss(t_ListStack *stack_a, t_ListStack *stack_b);
 void		pa(t_ListStack *stack_a, t_ListStack *stack_b);
 void		pb(t_ListStack *stack_a, t_ListStack *stack_b);
@@ -67,6 +67,9 @@ void		pb(t_ListStack *stack_a, t_ListStack *stack_b);
 /*
 	game2.c
 */
-void		ra(t_ListStack *stack_a);
+void		ra(t_ListStack *stack_a, int msg);
+void		rb(t_ListStack *stack_b, int msg);
+void		rr(t_ListStack *stack_a, t_ListStack *stack_b);
+void		rra(t_ListStack *stack_a, int msg);
 
 #endif
