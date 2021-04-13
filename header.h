@@ -51,8 +51,17 @@ t_ListStack	*create_list_stack(void);
 int			push_list(t_ListStack *stk, int data);
 int			is_empty_stack_list(t_ListStack *stk);
 int			pop_list(t_ListStack *stk);
-int			top_list(t_ListStack *stk);
+t_list		*top_list(t_ListStack *stk);
 void		delete_stack_list(t_ListStack *stk);
 t_ListStack	*make_stack(int ac, char **av);
+
+/*
+	game.c
+*/
+void		sa(t_ListStack *stack_a);
+void		sb(t_ListStack *stack_b);
+void		ss(t_ListStack *stack_a, t_ListStack *stack_b);
+void		pa(t_ListStack *stack_a, t_ListStack *stack_b);
+void		pb(t_ListStack *stack_a, t_ListStack *stack_b);
 
 #endif

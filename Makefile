@@ -4,12 +4,14 @@ SRCS		=	check_utils.c \
 				ft_atoi.c \
 				make_list.c \
 				push_swap.c \
+				game.c \
 
 
 OBJS		=	check_utils.o \
 				ft_atoi.o \
 				make_list.o \
 				push_swap.o \
+				game.c \
 
 INCLUDES	=	header.h
 

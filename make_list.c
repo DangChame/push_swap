@@ -58,11 +58,11 @@ int		pop_list(t_ListStack *stk)
 	return (data);
 }
 
-int		top_list(t_ListStack *stk)
+t_list	*top_list(t_ListStack *stk)
 {
 	if (is_empty_stack_list(stk))
-		return (-1);
-	return (stk->top->data);
+		return (NULL);
+	return (stk->top);
 }
 
 void	delete_stack_list(t_ListStack *stk)
