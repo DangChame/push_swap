@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 00:57:29 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/14 00:57:29 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/14 01:15:37 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ra(t_ListStack *stack_a)
 	}
 	last = last_before->next;
 	last_before->next = first;
+	first->next = NULL;
 	stack_a->top = last;
 	stack_a->top->next = second;
 }
