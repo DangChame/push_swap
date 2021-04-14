@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:38:53 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/14 17:57:30 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/14 19:48:54 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		check_int(char *s)
 	int		index;
 
 	index = 0;
+	if (((s[index] == '-' || s[index] == '+') && s[index + 1] == '\0'))
+		return (-1);
 	while (s[index])
 	{
 		if (check_nb(s[index]) == -1)

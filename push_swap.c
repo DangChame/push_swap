@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:24:34 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/14 19:04:20 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/14 19:49:18 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ int		main(int ac, char **av)
 	t_ListStack	*stack_a;
 	t_ListStack	*stack_b;
 
-	stack_a = make_stack(ac, av);
-
+	if ((stack_a = make_stack(ac, av)) == NULL)
+		return (0);
 	if (check_int_error(stack_a) == -1)
 		return (0);
 	stack_b = create_list_stack();
-	pb(stack_a, stack_b);
+/* 	pb(stack_a, stack_b);
 		pb(stack_a, stack_b);
 	pb(stack_a, stack_b);
 
-	rrb(stack_b, 1);
+	rrb(stack_b, 1); */
 
 
 	printf("stack a\n");
