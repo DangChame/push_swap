@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:18:51 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/13 16:21:39 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/14 17:28:47 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int		ck_spa(const char s)
+int			ck_spa(const char s)
 {
 	if (s == '\t' || s == '\n' || s == '\v' || s == '\f' || s == '\r'
 			|| s == ' ')
@@ -20,9 +20,9 @@ int		ck_spa(const char s)
 	return (-1);
 }
 
-int		make_ten(int nb)
+long int	make_ten(int nb)
 {
-	int	out;
+	long int	out;
 
 	out = 1;
 	while (nb-- > 0)
@@ -32,9 +32,9 @@ int		make_ten(int nb)
 	return (out);
 }
 
-int		make_nb(const char *s, int ini, int last, int m_count)
+long int	make_nb(const char *s, int ini, int last, int m_count)
 {
-	int	out;
+	long int	out;
 
 	out = 0;
 	while (ini <= last)
@@ -47,7 +47,7 @@ int		make_nb(const char *s, int ini, int last, int m_count)
 	return (out);
 }
 
-int		ft_atoi(const char *s)
+long int	ft_atoi(const char *s)
 {
 	int i;
 	int	m_count;

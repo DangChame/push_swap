@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 00:57:29 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/14 01:15:37 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/14 19:02:40 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,15 @@ void	ra(t_ListStack *stack_a, int msg)
 	t_list	*last;
 	t_list	*second;
 
+	if (msg == 1)
+		write(1,"ra\n", 3);
 	last = stack_a->top;
+	if (last == NULL)
+		return ;
 	first = stack_a->top;
 	second = first->next;
+	if (second == NULL)
+		return ;
 	while (last->next != NULL)
 	{
 		last = last->next;
@@ -28,31 +34,30 @@ void	ra(t_ListStack *stack_a, int msg)
 	last->next = first;
 	first->next = NULL;
 	stack_a->top = second;
-	if (msg == 1)
-		write(1,"ra\n", 3);
 }
 
 void	rb(t_ListStack *stack_b, int msg)
 {
 	t_list	*first;
-	t_list	*last_before;
 	t_list	*last;
 	t_list	*second;
 
-	last_before = stack_b->top;
-	first = stack_b->top;
-	second = first->next;
-	while (last_before->next->next != NULL)
-	{
-		last_before = last_before->next;
-	}
-	last = last_before->next;
-	last_before->next = first;
-	first->next = NULL;
-	stack_b->top = last;
-	stack_b->top->next = second;
 	if (msg == 1)
 		write(1,"rb\n", 3);
+	last = stack_b->top;
+	if (last == NULL)
+		return ;
+	first = stack_b->top;
+	second = first->next;
+	if (second == NULL)
+		return ;
+	while (last->next != NULL)
+	{
+		last = last->next;
+	}
+	last->next = first;
+	first->next = NULL;
+	stack_b->top = second;
 }
 
 void	rr(t_ListStack *stack_a, t_ListStack *stack_b)
@@ -64,24 +69,24 @@ void	rr(t_ListStack *stack_a, t_ListStack *stack_b)
 
 void	rra(t_ListStack *stack_a, int msg)
 {
-	t_list	*first;
 	t_list	*last_before;
 	t_list	*last;
 	t_list	*second;
 
+	if (msg == 1)
+		write(1,"rra\n", 4);
 	last_before = stack_a->top;
-	first = stack_a->top;
-	second = first->next;
+	if (last_before == NULL)
+		return ;
+	second = stack_a->top->next;
+	if (second == NULL)
+		return ;
 	while (last_before->next->next != NULL)
 	{
 		last_before = last_before->next;
 	}
 	last = last_before->next;
+	last->next = stack_a->top;
 	stack_a->top = last;
-	stack_a->top->next = second;
-	last = first;
-	last->next = NULL;
-	last_before->next = last;
-	if (msg == 1)
-		write(1,"rra\n", 4);
+	last_before->next = NULL;
 }

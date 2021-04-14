@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:38:53 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/13 17:27:29 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/14 17:57:30 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		check_nb(char c)
 {
-	if (!('0' <= c && c <= '9'))
+	if (!(('0' <= c && c <= '9') || c == '-' || c == '+'))
 		return (-1);
 	else
 		return (1);
@@ -50,15 +50,17 @@ int		check_all_int(int ac, char **av)
 
 int		check_twice(t_ListStack *stack)
 {
-	int		data;
-	t_list	*temp1;
-	t_list	*temp2;
+	long int	data;
+	t_list		*temp1;
+	t_list		*temp2;
 
 	temp1 = stack->top;
 	while (temp1->next != NULL)
 	{
 		data = temp1->data;
 		temp2 = temp1->next;
+		if (-2147483648 > data || 2147483647 < data)
+			return (-2);
 		while (temp2 != NULL)
 		{
 			if (data == temp2->data)
@@ -66,6 +68,25 @@ int		check_twice(t_ListStack *stack)
 			temp2 = temp2->next;
 		}
 		temp1 = temp1->next;
+	}
+	if (-2147483648 > temp1->data || 2147483647 < temp1->data)
+		return (-2);
+	return (1);
+}
+
+int		check_int_error(t_ListStack *stack_a)
+{
+	if (check_twice(stack_a) == -1)
+	{
+		write(2, "Error duple\n", 12);
+		free(stack_a);
+		return (-1);
+	}
+	else if (check_twice(stack_a) == -2)
+	{
+		write(2, "Error bigger than an integer \n", 30);
+		free(stack_a);
+		return (-1);
 	}
 	return (1);
 }

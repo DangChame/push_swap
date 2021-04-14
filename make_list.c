@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:31:40 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/13 17:24:37 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/14 17:35:48 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ t_ListStack	*create_list_stack(void)
 	return (stk);
 }
 
-int	push_list(t_ListStack *stk, int data)
+int			push_list(t_ListStack *stk, long int data)
 {
 	t_list *temp;
-	
+
 	if (!(temp = (t_list *)malloc(sizeof(t_list))))
 	{
 		write(2, "malloc error\n", 13);
@@ -39,16 +39,16 @@ int	push_list(t_ListStack *stk, int data)
 	return (1);
 }
 
-int		is_empty_stack_list(t_ListStack *stk)
+int			is_empty_stack_list(t_ListStack *stk)
 {
 	return (stk->top == NULL);
 }
 
-int		pop_list(t_ListStack *stk)
+long int	pop_list(t_ListStack *stk)
 {
-	int		data;
-	t_list	*temp;
-	
+	long int	data;
+	t_list		*temp;
+
 	if (is_empty_stack_list(stk))
 		return (-1);
 	temp = stk->top;
@@ -58,18 +58,18 @@ int		pop_list(t_ListStack *stk)
 	return (data);
 }
 
-t_list	*top_list(t_ListStack *stk)
+t_list		*top_list(t_ListStack *stk)
 {
 	if (is_empty_stack_list(stk))
 		return (NULL);
 	return (stk->top);
 }
 
-void	delete_stack_list(t_ListStack *stk)
+void		delete_stack_list(t_ListStack *stk)
 {
 	t_list	*temp;
 	t_list	*p;
-	
+
 	p = stk->top;
 	while (p)
 	{
@@ -84,7 +84,7 @@ t_ListStack	*make_stack(int ac, char **av)
 {
 	int			index;
 	t_ListStack	*stack;
-	int			data;
+	long int	data;
 
 	if (check_all_int(ac, av) == -1)
 	{
