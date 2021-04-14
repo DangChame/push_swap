@@ -26,7 +26,7 @@ int		main(int ac, char **av)
 		return (0);
 	}
 	stack_b = create_list_stack();
-	rra(stack_a, -1);
+	ra(stack_a, -1);
 
 
 

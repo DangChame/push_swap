@@ -15,22 +15,19 @@
 void	ra(t_ListStack *stack_a, int msg)
 {
 	t_list	*first;
-	t_list	*last_before;
 	t_list	*last;
 	t_list	*second;
 
-	last_before = stack_a->top;
+	last = stack_a->top;
 	first = stack_a->top;
 	second = first->next;
-	while (last_before->next->next != NULL)
+	while (last->next != NULL)
 	{
-		last_before = last_before->next;
+		last = last->next;
 	}
-	last = last_before->next;
-	last_before->next = first;
+	last->next = first;
 	first->next = NULL;
-	stack_a->top = last;
-	stack_a->top->next = second;
+	stack_a->top = second;
 	if (msg == 1)
 		write(1,"ra\n", 3);
 }
