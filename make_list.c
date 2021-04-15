@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:31:40 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/14 17:35:48 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/15 17:07:03 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ t_ListStack	*make_stack(int ac, char **av)
 	t_ListStack	*stack;
 	long int	data;
 
-	if (check_all_int(ac, av) == -1)
+	if (check_all_int(ac, av) == -1 || check_p_or_m_alone(ac, av) == -1)
 	{
 		write(2, "Error\n", 6);
 		return (NULL);

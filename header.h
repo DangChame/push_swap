@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/14 18:50:43 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/15 17:06:49 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@ int			check_int(char *s);
 int			check_all_int(int ac, char **av);
 int			check_twice(t_ListStack *stack);
 int			check_int_error(t_ListStack *stack_a);
+
+/*
+	check_utils2.c
+*/
+int			check_p_or_m_alone(int ac, char **av);
+int			p_m_alone(char *s);
 
 /*
 	make_list.c
