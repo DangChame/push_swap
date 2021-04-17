@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/15 17:06:49 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/17 11:18:53 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,13 @@ void		rra(t_ListStack *stack_a, int msg);
 */
 void		rrb(t_ListStack *stack_b, int msg);
 void		rrr(t_ListStack *stack_a, t_ListStack *stack_b);
+
+/*
+	sort.c
+*/
+
+void		sort(t_ListStack *stack_a, t_ListStack *stack_b);
+void		sorting_b_to_a(t_ListStack *stack_a, t_ListStack *stack_b);
+void		sorting_a_to_b(t_ListStack *stack_a, t_ListStack *stack_b);
 
 #endif

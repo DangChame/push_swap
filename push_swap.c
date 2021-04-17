@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:24:34 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/14 19:49:18 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/04/17 11:17:23 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(int ac, char **av)
 
 	rrb(stack_b, 1); */
 
-
+	sorting_a_to_b(stack_a, stack_b);
 	printf("stack a\n");
 	while (is_empty_stack_list(stack_a) != 1)
 		printf("%ld\n", pop_list(stack_a));

@@ -8,6 +8,7 @@ SRCS		=	check_utils.c \
 				game2.c \
 				game3.c \
 				check_utils2.c \
+				sort.c \
 
 OBJS	= ${SRCS:.c=.o}
 
