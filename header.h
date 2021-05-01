@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/17 11:18:53 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/01 23:49:37 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct		s_list
 {
@@ -25,6 +26,7 @@ typedef struct		s_list
 typedef struct		s_ListStack
 {
 	t_list			*top;
+	int				size;
 }					t_ListStack;
 
 /*
@@ -61,6 +63,8 @@ long int	pop_list(t_ListStack *stk);
 t_list		*top_list(t_ListStack *stk);
 void		delete_stack_list(t_ListStack *stk);
 t_ListStack	*make_stack(int ac, char **av);
+t_list		*bottom_list(t_ListStack *stk);
+
 
 /*
 	game.c
@@ -92,5 +96,14 @@ void		rrr(t_ListStack *stack_a, t_ListStack *stack_b);
 void		sort(t_ListStack *stack_a, t_ListStack *stack_b);
 void		sorting_b_to_a(t_ListStack *stack_a, t_ListStack *stack_b);
 void		sorting_a_to_b(t_ListStack *stack_a, t_ListStack *stack_b);
+
+int			check_sorted(t_ListStack *stack_a);
+
+/// pivot.c
+
+t_list		*find_mid(t_ListStack *stack);
+void		move_high(t_ListStack *a, t_ListStack *b);
+void		move_low(t_ListStack *a, t_ListStack *b);
+void		move_all_again(t_ListStack *a);
 
 #endif

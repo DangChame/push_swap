@@ -9,6 +9,8 @@ SRCS		=	check_utils.c \
 				game3.c \
 				check_utils2.c \
 				sort.c \
+				pivot.c \
+				sort_first.c \
 
 OBJS	= ${SRCS:.c=.o}
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_first.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 10:31:24 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/17 11:01:29 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/01 22:22:04 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		check_sorted(t_ListStack *stack_a)
 	return (1);
 }
 
-void	sorting_a_to_b(t_ListStack *stack_a, t_ListStack *stack_b)
+/* void	sorting_a_to_b(t_ListStack *stack_a, t_ListStack *stack_b)
 {
 	t_list	*temp;
 
@@ -87,4 +87,4 @@ void	sort(t_ListStack *stack_a, t_ListStack *stack_b)
 		break ;
 	}
 	write(1, "pqpqpqpqpq\n", 11);
-}
+} */

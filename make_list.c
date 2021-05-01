@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:31:40 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/15 17:07:03 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/01 22:11:51 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_ListStack	*create_list_stack(void)
 		return (NULL);
 	}
 	stk->top = NULL;
+	stk->size = 0;
 	return (stk);
 }
 
@@ -36,6 +37,7 @@ int			push_list(t_ListStack *stk, long int data)
 	temp->data = data;
 	temp->next = stk->top;
 	stk->top = temp;
+	stk->size += 1;
 	return (1);
 }
 
@@ -55,6 +57,7 @@ long int	pop_list(t_ListStack *stk)
 	stk->top = stk->top->next;
 	data = temp->data;
 	free(temp);
+	stk->size -= 1;
 	return (data);
 }
 
@@ -63,6 +66,18 @@ t_list		*top_list(t_ListStack *stk)
 	if (is_empty_stack_list(stk))
 		return (NULL);
 	return (stk->top);
+}
+
+t_list		*bottom_list(t_ListStack *stk)
+{
+	t_list	*temp;
+
+	if (is_empty_stack_list(stk))
+		return (NULL);
+	temp = top_list(stk);
+	while (temp->next != NULL)
+		temp = temp->next;
+	return (temp);
 }
 
 void		delete_stack_list(t_ListStack *stk)
