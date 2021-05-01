@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 21:48:35 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/02 01:00:57 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/02 01:08:31 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ t_list	*find_mid(t_ListStack *stack)
 	t_list	*temp3;
 
 	temp1 = top_list(stack);
+	temp = top_list(stack);
 	index = 0;
 	while (index < stack->size / 2)
 	{

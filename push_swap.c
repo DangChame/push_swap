@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:24:34 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/02 00:47:31 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/02 01:16:58 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,9 @@ int		main(int ac, char **av)
 	pb(stack_a, stack_b);
 	rrb(stack_b, 1);
 	sorting_a_to_b(stack_a, stack_b); */
-	for (int i = 0; i <= 5; i++)
-/* 	while (1)
- */	{
+/* 	for (int i = 0; i <= 5; i++)
+ */	while (1)
+	{
 		while (is_empty_stack_list(stack_a) != 1)
 		{
 /* 			move_high(stack_a, stack_b);
@@ -88,5 +88,6 @@ int		main(int ac, char **av)
 	}
 /* 	move_all_again(stack_a);
 	print_stack(stack_a, stack_b); */
-
+	delete_stack_list(stack_a);
+	delete_stack_list(stack_b);
 }
