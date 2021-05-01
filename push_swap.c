@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:24:34 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/02 00:13:24 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/02 00:47:31 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,14 @@ int		main(int ac, char **av)
 	pb(stack_a, stack_b);
 	rrb(stack_b, 1);
 	sorting_a_to_b(stack_a, stack_b); */
-	for (int i = 0; i <= 2; i++)
+	for (int i = 0; i <= 5; i++)
 /* 	while (1)
  */	{
 		while (is_empty_stack_list(stack_a) != 1)
 		{
-			move_high(stack_a, stack_b);
-			/* move_low(stack_b, stack_a);
-			print_stack(stack_a, stack_b);
+/* 			move_high(stack_a, stack_b);
+ */			move_low(stack_b, stack_a);
+			/* print_stack(stack_a, stack_b);
 			printf("stack a\n");
 			while (is_empty_stack_list(stack_a) != 1)
 				printf("%ld\n", pop_list(stack_a));
@@ -78,10 +78,13 @@ int		main(int ac, char **av)
 		}
 		while (is_empty_stack_list(stack_b) != 1)
 		{
-/* 			move_high(stack_b, stack_a);
- */			move_low(stack_a, stack_b);
-			print_stack(stack_a, stack_b);
+			move_high(stack_b, stack_a);
+/* 			move_low(stack_a, stack_b);
+			print_stack(stack_a, stack_b); */
 		}
+		print_stack(stack_a, stack_b);
+		if (check_sorted(stack_a) == 1)
+			break ;
 	}
 /* 	move_all_again(stack_a);
 	print_stack(stack_a, stack_b); */

@@ -6,14 +6,14 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 21:48:35 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/01 23:54:21 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/02 01:00:57 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "header.h"
 
-t_list	*find_mid(t_ListStack *stack)
+/* t_list	*find_mid(t_ListStack *stack)
 {
 	t_list	*temp;
 	int		index;
@@ -26,6 +26,31 @@ t_list	*find_mid(t_ListStack *stack)
 		index++;
 	}
 	return (temp);
+} */
+
+t_list	*find_mid(t_ListStack *stack)
+{
+	t_list	*temp;
+	int		index;
+	t_list	*temp1;
+	t_list	*temp2;
+	t_list	*temp3;
+
+	temp1 = top_list(stack);
+	index = 0;
+	while (index < stack->size / 2)
+	{
+		temp = temp->next;
+		index++;
+	}
+	temp2 = temp;
+	temp3 = bottom_list(stack);
+	if (temp->data < temp2->data && temp2->data < temp3->data)
+		return (temp2);
+	else if (temp1->data < temp3->data && temp3->data < temp2->data)
+		return (temp3);
+	else
+		return (temp1);
 }
 
 void	move_high(t_ListStack *a, t_ListStack *b)
