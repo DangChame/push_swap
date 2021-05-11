@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game3.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 18:06:33 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/14 19:02:45 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/11 17:00:12 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	rrb(t_ListStack *stack_b, int msg)
 	t_list	*second;
 
 	if (msg == 1)
-		write(1,"rrb\n", 4);
+		write(1,"rra\n", 4);
 	last_before = stack_b->top;
 	if (last_before == NULL)
 		return ;

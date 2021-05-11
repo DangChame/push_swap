@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 00:11:11 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/14 18:53:11 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/11 16:59:53 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	pa(t_ListStack *stack_a, t_ListStack *stack_b)
 	{
 		data = pop_list(stack_b);
 		push_list(stack_a, data);
-		write(1,"pa\n", 3);
+		write(1,"pb\n", 3);
 	}
 
 }
@@ -86,6 +86,6 @@ void	pb(t_ListStack *stack_a, t_ListStack *stack_b)
 	{
 		data = pop_list(stack_a);
 		push_list(stack_b, data);
-		write(1,"pb\n", 3);
+		write(1,"pa\n", 3);
 	}
 }
