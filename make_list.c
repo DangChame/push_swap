@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:31:40 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/01 22:11:51 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/11 18:21:57 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ t_ListStack	*make_stack(int ac, char **av)
 	int			index;
 	t_ListStack	*stack;
 	long int	data;
+	char		**temp;
 
 	if (check_all_int(ac, av) == -1 || check_p_or_m_alone(ac, av) == -1)
 	{
@@ -108,11 +109,25 @@ t_ListStack	*make_stack(int ac, char **av)
 	}
 	index = ac - 1;
 	stack = create_list_stack();
-	while (index >= 1)
+	if (ac == 2)
 	{
-		data = ft_atoi(av[index]);
-		push_list(stack, data);
-		index--;
+		temp = ft_split(av[1], ' ');
+		index = check_nb_to_mal(av[1], ' ') - 2;
+		while (index >= 0)
+		{
+			data = ft_atoi(av[index]);
+			push_list(stack, data);
+			index--;
+		}
+	}
+	else
+	{
+		while (index >= 1)
+		{
+			data = ft_atoi(av[index]);
+			push_list(stack, data);
+			index--;
+		}
 	}
 	return (stack);
 }

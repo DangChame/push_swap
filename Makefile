@@ -11,6 +11,8 @@ SRCS		=	check_utils.c \
 				sort.c \
 				pivot.c \
 				sort_first.c \
+				ft_split.c \
+				new.c \
 
 OBJS	= ${SRCS:.c=.o}
 

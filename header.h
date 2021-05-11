@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/01 23:49:37 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/11 18:20:01 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,13 @@ t_list		*find_mid(t_ListStack *stack);
 void		move_high(t_ListStack *a, t_ListStack *b);
 void		move_low(t_ListStack *a, t_ListStack *b);
 void		move_all_again(t_ListStack *a);
+
+/// ft_split.c
+
+int			check_c(char to, char c);
+int			check_nb_to_mal(char const *s, char c);
+int			ar_mal(char const *s, char c, int index3);
+char		**ft_split(char const *s, char c);
+
 
 #endif
