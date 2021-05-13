@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/11 18:20:01 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/13 15:08:19 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,11 @@ int			check_nb_to_mal(char const *s, char c);
 int			ar_mal(char const *s, char c, int index3);
 char		**ft_split(char const *s, char c);
 
+/// new.c
+int 		*make_int_list(t_ListStack *stack);
+void		find_max_and_int(int *arr, int size, int *index_arr);
+void		move_a_to_b(int *arr, int size, t_ListStack *s_a, t_ListStack *s_b);
+/// result[4] 의 결과물은 min_to_top_up, max_to_top_up, min_to_top_down, max_to_top_down 순임.
+void		max_to_top(int *arr, t_ListStack *s_b);
 
 #endif

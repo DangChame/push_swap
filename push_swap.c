@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:24:34 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/11 18:06:28 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/13 15:14:43 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,25 @@ int		main(int ac, char **av)
 {
 	t_ListStack	*stack_a;
 	t_ListStack	*stack_b;
+	int			*arr;
 
 	if ((stack_a = make_stack(ac, av)) == NULL)
 		return (0);
 	if (check_int_error(stack_a) == -1)
 		return (0);
 	stack_b = create_list_stack();
-	while (1)
+	while (is_empty_stack_list(stack_a) != 1)
+	{
+		arr = make_int_list(stack_a);
+		move_a_to_b(arr, stack_a->size, stack_a, stack_b);
+		free(arr);
+	}
+	arr = make_int_list(stack_b);
+	max_to_top(arr, stack_b);
+	free(arr);
+	while (is_empty_stack_list(stack_b) != 1)
+		pa(stack_a, stack_b);
+/* 	while (1)
 	{
 		while (is_empty_stack_list(stack_a) != 1)
 		{
@@ -68,11 +80,8 @@ int		main(int ac, char **av)
 		}
 		if (check_sorted(stack_a) == 1)
 			break ;
-	}
-
-
-
-	print_stack(stack_a, stack_b);
-	delete_stack_list(stack_a);
+	} */
+/* 	print_stack(stack_a, stack_b);
+ */	delete_stack_list(stack_a);
 	delete_stack_list(stack_b);
 }

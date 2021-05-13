@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:31:40 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/11 18:21:57 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/13 15:27:36 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ t_ListStack	*make_stack(int ac, char **av)
 		index = check_nb_to_mal(av[1], ' ') - 2;
 		while (index >= 0)
 		{
-			data = ft_atoi(av[index]);
+			data = ft_atoi(temp[index]);
 			push_list(stack, data);
 			index--;
 		}

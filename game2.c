@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 00:57:29 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/11 17:00:08 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/13 13:38:08 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ra(t_ListStack *stack_a, int msg)
 	t_list	*second;
 
 	if (msg == 1)
-		write(1,"rb\n", 3);
+		write(1,"ra\n", 3);
 	last = stack_a->top;
 	if (last == NULL)
 		return ;
@@ -43,7 +43,7 @@ void	rb(t_ListStack *stack_b, int msg)
 	t_list	*second;
 
 	if (msg == 1)
-		write(1,"ra\n", 3);
+		write(1,"rb\n", 3);
 	last = stack_b->top;
 	if (last == NULL)
 		return ;
@@ -74,7 +74,7 @@ void	rra(t_ListStack *stack_a, int msg)
 	t_list	*second;
 
 	if (msg == 1)
-		write(1,"rrb\n", 4);
+		write(1,"rra\n", 4);
 	last_before = stack_a->top;
 	if (last_before == NULL)
 		return ;
