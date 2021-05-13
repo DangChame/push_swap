@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/13 15:08:19 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/13 16:46:10 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,5 +119,19 @@ void		find_max_and_int(int *arr, int size, int *index_arr);
 void		move_a_to_b(int *arr, int size, t_ListStack *s_a, t_ListStack *s_b);
 /// result[4] 의 결과물은 min_to_top_up, max_to_top_up, min_to_top_down, max_to_top_down 순임.
 void		max_to_top(int *arr, t_ListStack *s_b);
+int			find_lowest(int *result);
+
+
+/// new2.c
+void		v2(t_ListStack *stack_a, t_ListStack *stack_b);
+void		move_b_to_a(int *arr, int size, t_ListStack *s_a, t_ListStack *s_b);
+void		move_b_to_a_large(int *arr, int size, t_ListStack *a, t_ListStack *b);
+void		move_a_to_b_small(int *arr, int size, t_ListStack *a, t_ListStack *b);
+
+
+
+
+
+void	print_stack(t_ListStack *a, t_ListStack	*b);
 
 #endif

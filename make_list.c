@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:31:40 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/13 15:27:36 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/13 15:47:27 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,20 +102,28 @@ t_ListStack	*make_stack(int ac, char **av)
 	long int	data;
 	char		**temp;
 
-	if (check_all_int(ac, av) == -1 || check_p_or_m_alone(ac, av) == -1)
+	/* if (check_all_int(ac, av) == -1 || check_p_or_m_alone(ac, av) == -1)
 	{
 		write(2, "Error\n", 6);
 		return (NULL);
-	}
+	} */
 	index = ac - 1;
 	stack = create_list_stack();
 	if (ac == 2)
 	{
 		temp = ft_split(av[1], ' ');
-		index = check_nb_to_mal(av[1], ' ') - 2;
+		int m = 0;
+		while (temp[m] != NULL)
+		{
+			printf("%s\n", temp[m]);
+			m++;
+		}
+		printf("temp is done\n");
+		index = check_nb_to_mal(av[1], ' ') - 1;
 		while (index >= 0)
 		{
 			data = ft_atoi(temp[index]);
+			printf("%ld\n", data);
 			push_list(stack, data);
 			index--;
 		}

@@ -13,6 +13,7 @@ SRCS		=	check_utils.c \
 				sort_first.c \
 				ft_split.c \
 				new.c \
+				new2.c \
 
 OBJS	= ${SRCS:.c=.o}
 
