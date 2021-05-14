@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 18:06:47 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/13 15:13:46 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 17:20:05 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	find_max_and_int(int *arr, int size, int *index_arr)
 	{
 		if (arr[index] > arr[max])
 			max = index;
-		if (arr[index] < arr[min])
+		if (arr[index] <= arr[min])
 			min = index;
 		index++;
 	}
@@ -93,10 +93,13 @@ int 	*make_int_list(t_ListStack *stack)
 	int		*arr;
 	int		size;
 	t_list	*temp;
+	t_list	*temp2;
 	int		index;
 
 	temp = top_list(stack);
+	temp2 = top_list(stack);
 	size = stack->size;
+
 	if (!(arr = malloc(sizeof(int) * size)))
 		return (NULL);
 	index = 0;

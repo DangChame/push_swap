@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/14 11:53:19 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 18:02:06 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,5 +135,10 @@ void 		swap(int *A, int low, int high);
 int 		Partition(int *A, int left, int right);
 
 void	print_stack(t_ListStack *a, t_ListStack	*b);
+void		v3(t_ListStack *stack_a, t_ListStack *stack_b);
+void		v4(t_ListStack *stack_a, t_ListStack *stack_b);
+void		move_a_to_b_1_2(t_ListStack *a, t_ListStack *b, int *par, int *nb);
+void	find_low_3_move(int *arr, t_ListStack *a, int *par);
+void	v5(t_ListStack *stack_a, t_ListStack *stack_b);
 
 #endif

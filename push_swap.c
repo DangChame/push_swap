@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:24:34 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/13 16:27:13 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 18:21:34 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_stack(t_ListStack *a, t_ListStack	*b)
 {
 	t_list *temp;
 
-		printf("@@@@@@@@@@@@@@@@\n");
+		printf("@@@@@@@@@@@@@@@@mmmmmmmmmmmmm\n");
 
 	printf("stack a \n");
 	temp = top_list(a);
@@ -44,7 +44,7 @@ void	print_stack(t_ListStack *a, t_ListStack	*b)
 		printf("%ld\n", temp->data);
 		temp = temp->next;
 	}
-	printf("@@@@@@@@@@@@@@@@\n");
+	printf("@@@@@@@@@@@@@@@@mmmmmmmmmmmm\n");
 }
 void	v1(t_ListStack *stack_a, t_ListStack *stack_b)
 {
@@ -72,7 +72,8 @@ int		main(int ac, char **av)
 	if (check_int_error(stack_a) == -1)
 		return (0);
 	stack_b = create_list_stack();
-	v2(stack_a, stack_b);
+
+	v5(stack_a, stack_b);
 /* 	while (1)
 	{
 		while (is_empty_stack_list(stack_a) != 1)

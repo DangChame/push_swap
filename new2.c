@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 16:07:28 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/13 16:48:43 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 18:08:41 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	move_b_to_a(int *arr, int size, t_ListStack *s_a, t_ListStack *s_b)
 		}
 	}
 	pa(s_a, s_b);
-	if (result_index == 1 || result_index == 3)
+	if (result_index == 0 || result_index == 2)
 		ra(s_a, 1);
 }
 
