@@ -14,6 +14,8 @@ SRCS		=	check_utils.c \
 				ft_split.c \
 				new.c \
 				new2.c \
+				new3.c \
+				quick_sort.c \
 
 OBJS	= ${SRCS:.c=.o}
 

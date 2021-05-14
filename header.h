@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/13 16:46:10 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 11:53:19 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,8 +129,10 @@ void		move_b_to_a_large(int *arr, int size, t_ListStack *a, t_ListStack *b);
 void		move_a_to_b_small(int *arr, int size, t_ListStack *a, t_ListStack *b);
 
 
-
-
+///	quick_sort.c
+void 		QuickSort(int *A, int left, int right);
+void 		swap(int *A, int low, int high);
+int 		Partition(int *A, int left, int right);
 
 void	print_stack(t_ListStack *a, t_ListStack	*b);
 
