@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   game3.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 18:06:33 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/13 13:38:13 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 22:21:49 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	rrb(t_ListStack *stack_b, int msg)
+void	rrb(t_liststack *stack_b, int msg)
 {
 	t_list	*last_before;
 	t_list	*last;
 	t_list	*second;
 
 	if (msg == 1)
-		write(1,"rrb\n", 4);
+		write(1, "rrb\n", 4);
 	last_before = stack_b->top;
 	if (last_before == NULL)
 		return ;
@@ -36,9 +36,9 @@ void	rrb(t_ListStack *stack_b, int msg)
 	last_before->next = NULL;
 }
 
-void	rrr(t_ListStack *stack_a, t_ListStack *stack_b)
+void	rrr(t_liststack *stack_a, t_liststack *stack_b)
 {
 	rra(stack_a, -1);
 	rrb(stack_b, -1);
-	write(1,"rrr\n", 4);
+	write(1, "rrr\n", 4);
 }

@@ -3,55 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 11:51:32 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/14 13:35:37 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 22:21:49 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void swap(int *A, int low, int high)
+void	swap(int *a, int low, int high)
 {
 	int temp;
 
-	temp = A[low];
-	A[low] = A[high];
-	A[high] = temp;
+	temp = a[low];
+	a[low] = a[high];
+	a[high] = temp;
 }
 
-int Partition(int *A, int left, int right)
+int		partition(int *a, int left, int right)
 {
 	int low;
 	int	high;
 	int	pivot_item;
-	
-	pivot_item = A[left];
+
+	pivot_item = a[left];
 	low = left;
 	high = right;
-	while(low < high)
+	while (low < high)
 	{
-		while(low<=right && A[low] <= pivot_item)
+		while (low <= right && a[low] <= pivot_item)
 			low++;
-		while(left<=high && A[high] > pivot_item)
+		while (left <= high && a[high] > pivot_item)
 			high--;
-		if(low < high)
-			swap(A, low, high);
+		if (low < high)
+			swap(a, low, high);
 	}
-	A[left] = A[high];
-	A[high] = pivot_item;
-	return high;
+	a[left] = a[high];
+	a[high] = pivot_item;
+	return (high);
 }
 
-void QuickSort(int *A, int left, int right)
+void	quicksort(int *a, int left, int right)
 {
 	int pivot;
 
-	if(left < right)
+	if (left < right)
 	{
-		pivot = Partition(A, left, right);
-		QuickSort(A, left, pivot-1);
-		QuickSort(A, pivot+1, right);
+		pivot = partition(a, left, right);
+		quicksort(a, left, pivot - 1);
+		quicksort(a, pivot + 1, right);
 	}
 }

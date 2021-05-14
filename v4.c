@@ -6,295 +6,95 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 17:00:09 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/14 21:34:08 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 22:45:51 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	move_a_to_b_1_2(t_ListStack *a, t_ListStack *b, int *par, int *nb)
+void	find_low_3_move(int *arr, t_liststack *a, int *par)
 {
-	int		size;
-
-	size = a->size;
-	while (size >= 0)
-	{
-		if (-2147483648 <= top_list(a)->data && top_list(a)->data <= par[0])
-		{
-			pb(a, b);
-			rb(b, 1);
-			nb[0] += 1;
-		}
-		else if (par[0] < top_list(a)->data && top_list(a)->data <= par[1])
-		{
-			pb(a, b);
-			nb[1] += 1;
-		}
-		else if (par[1] < top_list(a)->data && top_list(a)->data <= 2147483647)
-			ra(a, 1);
-		size--;
-	}
+	quicksort(arr, 0, a->size - 1);
+	par[0] = arr[a->size / 3];
+	par[1] = arr[a->size / 3 * 2];
 }
 
-void	move_small(t_ListStack *a, t_ListStack *b, int *arr)
+int		find_lowest(int *result)
 {
-	int		index[2];
-	int		min_to_top_up;
-	int		min_to_top_down;
+	int		index;
+	int		low_index;
 
-
-	find_max_and_int(arr, a->size, index);
-	min_to_top_up = index[0];
-	min_to_top_down = a->size - 1 - index[0] + 1;
-	if (min_to_top_down < min_to_top_up)
+	index = 0;
+	low_index = 0;
+	while (index < 4)
 	{
-		while (min_to_top_down != 0)
+		if (result[low_index] > result[index])
 		{
-			rra(a, 1);
-			min_to_top_down--;
+			low_index = index;
 		}
+		index++;
 	}
-	else
-	{
-		while (min_to_top_up != 0)
-		{
-			ra(a, 1);
-			min_to_top_up--;
-		}
-	}
-	pb(a, b);
+	return (low_index);
 }
-void	move_small_b_to_a(int *arr, t_ListStack *a, t_ListStack *b, int size)
+
+void	move_a_to_b(int *arr, int size, t_liststack *s_a, t_liststack *s_b)
 {
-	int		index[2];
-	int		min_to_top_up;
-	int		moved;
+	int		index[4];
+	int		result[4];
+	int		result_index;
+	int		temp_result_index;
 
 	find_max_and_int(arr, size, index);
-	min_to_top_up = index[1];
-	moved = 0;
-	while (min_to_top_up != 0)
+	save_index(result, size, index);
+	result_index = find_lowest(result);
+	temp_result_index = result[result_index];
+	if (result_index == 3 || result_index == 2)
 	{
-		rb(b, 1);
-		min_to_top_up--;
-		moved++;
+		while (temp_result_index != 0)
+		{
+			rra(s_a, 1);
+			temp_result_index--;
+		}
 	}
-	pa(a, b);
-	while (moved != 0)
-	{
-		rrb(b, 1);
-		moved--;
-	}
+	move_a_to_b_util(result_index, s_a, s_b, temp_result_index);
 }
 
-void	v4(t_ListStack *stack_a, t_ListStack *stack_b)
+void	v6(t_liststack *stack_a, t_liststack *stack_b)
 {
 	int		partion[2];
 	int		*arr;
 	int		nb_moved[3];
+	int		temp[1];
 
 	arr = make_int_list(stack_a);
 	find_low_3_move(arr, stack_a, partion);
 	free(arr);
-	printf("par0 is %d par1 is %d\n", partion[0], partion[1]);
-	nb_moved[0] = 0;
-	nb_moved[1] = 0;
-	nb_moved[2] = 0;
+	init_nbmoved(nb_moved);
 	move_a_to_b_1_2(stack_a, stack_b, partion, nb_moved);
-	while (is_empty_stack_list(stack_a) != 1)
-	{
-		arr = make_int_list(stack_a);
-		move_small(stack_a, stack_b, arr);
-		free(arr);
-		nb_moved[2] += 1;
-	}
-	while (nb_moved[2] != 0)
-	{
+	move_2_to_b(stack_a, stack_b, arr, nb_moved);
+	rotate_2_on_b(stack_b, partion);
+	temp[0] = nb_moved[1];
+	do_pa(stack_a, stack_b, temp);
+	move_1_a_to_b(stack_a, stack_b, arr);
+	rotate_1_on_b(stack_b, partion);
+	temp[0] = nb_moved[0];
+	do_pa(stack_a, stack_b, temp);
+	move_0_a_to_b(stack_a, stack_b, arr);
+	rotate_0_on_b(stack_b, partion);
+	while (is_empty_stack_list(stack_b) != 1)
 		pa(stack_a, stack_b);
-		nb_moved[2]--;
-	}
-	while (nb_moved[1] != 0)
-	{
-		arr = make_int_list(stack_b);
-		move_small_b_to_a(arr, stack_a, stack_b, nb_moved[1]);
-		free(arr);
-		nb_moved[1]--;
-	}
-
-
-	while (nb_moved[0] != 0)
-	{
-		arr = make_int_list(stack_b);
-		move_small_b_to_a(arr, stack_a, stack_b, nb_moved[0]);
-		free(arr);
-		nb_moved[0]--;
-	}
 }
 
-void	v5(t_ListStack *stack_a, t_ListStack *stack_b)
+int		check_sorted(t_liststack *stack_a)
 {
-	int		partion[2];
-	int		*arr;
-	int		nb_moved[3];
-	int		temp;
+	t_list	*temp;
 
-	arr = make_int_list(stack_a);
-	find_low_3_move(arr, stack_a, partion);
-	free(arr);
-	nb_moved[0] = 0;
-	nb_moved[1] = 0;
-	nb_moved[2] = 0;
-	move_a_to_b_1_2(stack_a, stack_b, partion, nb_moved);
-	///작은 순 대로 b 에다가 옮김.
-	while (is_empty_stack_list(stack_a) != 1)
+	temp = top_list(stack_a);
+	while (temp->next != NULL)
 	{
-		arr = make_int_list(stack_a);
-		move_small(stack_a, stack_b, arr);
-		free(arr);
-		nb_moved[2] += 1;
+		if (temp->data > temp->next->data)
+			return (-1);
+		temp = temp->next;
 	}
-
-	while (nb_moved[2] != 0)
-	{
-		pa(stack_a, stack_b);
-		nb_moved[2]--;
-	}
-	temp = nb_moved[1];
-	while (nb_moved[1] != 0)
-	{
-		pa(stack_a, stack_b);
-		nb_moved[1]--;
-	}
-	while (is_empty_stack_list(stack_b) != 1)
-	{
-		arr = make_int_list(stack_b);
-		move_b_to_a(arr, stack_b->size, stack_a, stack_b);
-		free(arr);
-	}
-	while (-2147483648 <= top_list(stack_a)->data && top_list(stack_a)->data <= partion[0])
-	{
-		ra(stack_a, 1);
-	}
-	while (temp != 0)
-	{
-		pb(stack_a, stack_b);
-		temp--;
-	}
-	while (is_empty_stack_list(stack_b) != 1)
-	{
-		arr = make_int_list(stack_b);
-		move_b_to_a(arr, stack_b->size, stack_a, stack_b);
-		free(arr);
-	}
-	while (partion[0] < top_list(stack_a)->data && top_list(stack_a)->data <= partion[1])
-	{
-		ra(stack_a, 1);
-	}
-	while (partion[1] < top_list(stack_a)->data && top_list(stack_a)->data <= 2147483648)
-	{
-		ra(stack_a, 1);
-	}
-}
-
-
-void	v6(t_ListStack *stack_a, t_ListStack *stack_b)
-{
-	int		partion[2];
-	int		*arr;
-	int		nb_moved[3];
-	int		temp;
-
-	arr = make_int_list(stack_a);
-	find_low_3_move(arr, stack_a, partion);
-	free(arr);
-	nb_moved[0] = 0;
-	nb_moved[1] = 0;
-	nb_moved[2] = 0;
-	/// 예이예써 삐로 0이랑 1 옮김
-	move_a_to_b_1_2(stack_a, stack_b, partion, nb_moved);
-
-	while (is_empty_stack_list(stack_a) != 1)
-	{
-		arr = make_int_list(stack_a);
-		move_a_to_b(arr, stack_a->size, stack_a, stack_b);
-		free(arr);
-		nb_moved[2] += 1;
-	}
-	while (partion[1] < top_list(stack_b)->data && top_list(stack_b)->data <= 2147483648)
-	{
-		rb(stack_b, 1);
-	}
-
-/* 	while (nb_moved[2] != 0)
-	{
-		pa(stack_a, stack_b);
-		nb_moved[2]--;
-	} */
-	temp = nb_moved[1];
-	while (temp != 0)
-	{
-		pa(stack_a, stack_b);
-		temp--;
-	}
-	while (is_empty_stack_list(stack_a) != 1)
-	{
-		arr = make_int_list(stack_a);
-		move_a_to_b(arr, stack_a->size, stack_a, stack_b);
-		free(arr);
-	}
-	while (partion[0] < top_list(stack_b)->data && top_list(stack_b)->data <= partion[1])
-	{
-		rb(stack_b, 1);
-	}
-	temp = nb_moved[0];
-	while (temp != 0)
-	{
-		pa(stack_a, stack_b);
-		temp--;
-	}
-	while (is_empty_stack_list(stack_a) != 1)
-	{
-		arr = make_int_list(stack_a);
-		move_a_to_b(arr, stack_a->size, stack_a, stack_b);
-		free(arr);
-	}
-	while (-2147483648 <= top_list(stack_b)->data && top_list(stack_b)->data <= partion[0])
-	{
-		rb(stack_b, 1);
-	}
-	while (is_empty_stack_list(stack_b) != 1)
-		pa(stack_a, stack_b);
-	/* while (is_empty_stack_list(stack_b) != 1)
-	{
-		arr = make_int_list(stack_b);
-		move_b_to_a(arr, stack_b->size, stack_a, stack_b);
-		free(arr);
-	}
-	while (-2147483648 <= top_list(stack_a)->data && top_list(stack_a)->data <= partion[0])
-	{
-		ra(stack_a, 1);
-	}
-	while (temp != 0)
-	{
-		pb(stack_a, stack_b);
-		temp--;
-	}
-
-	while (is_empty_stack_list(stack_b) != 1)
-	{
-		arr = make_int_list(stack_b);
-		move_b_to_a(arr, stack_b->size, stack_a, stack_b);
-		free(arr);
-	}
-
-	while (partion[0] < top_list(stack_a)->data && top_list(stack_a)->data <= partion[1])
-	{
-		ra(stack_a, 1);
-	}
-	while (partion[1] < top_list(stack_a)->data && top_list(stack_a)->data <= 2147483648)
-	{
-		ra(stack_a, 1);
-	} */
-
-
+	return (1);
 }

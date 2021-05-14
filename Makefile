@@ -1,6 +1,6 @@
 NAME		=	push_swap
 
-SRCS		=	check_utils.c \
+sRCs		=	check_utils.c \
 				ft_atoi.c \
 				make_list.c \
 				push_swap.c \
@@ -8,27 +8,25 @@ SRCS		=	check_utils.c \
 				game2.c \
 				game3.c \
 				check_utils2.c \
-				sort.c \
-				pivot.c \
-				sort_first.c \
 				ft_split.c \
-				new.c \
-				new2.c \
-				v3.c \
 				quick_sort.c \
 				v4.c \
+				make_list2.c \
+				v4_utils.c \
+				v4_utils2.c \
+				v4_utils3.c \
 
-OBJS	= ${SRCS:.c=.o}
+OBJs	= ${sRCs:.c=.o}
 
-INCLUDES	=	header.h
+INCLUDEs	=	header.h
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	gcc -Wall -Wextra -Werror $(SRCS) -o push_swap
+$(NAME): $(OBJs)
+	gcc -Wall -Wextra -Werror $(sRCs) -o push_swap
 
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJs)
 
 fclean:	clean
 	rm -rf $(NAME)

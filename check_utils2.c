@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   check_utils2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/15 16:58:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/15 17:20:16 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 22:21:49 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-#include <stdio.h>
+
 int		p_m_alone(char *s)
 {
 	int		index;

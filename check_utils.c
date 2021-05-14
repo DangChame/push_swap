@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:38:53 by cchoi             #+#    #+#             */
-/*   Updated: 2021/04/14 19:48:54 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 22:21:49 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		check_all_int(int ac, char **av)
 	return (1);
 }
 
-int		check_twice(t_ListStack *stack)
+int		check_twice(t_liststack *stack)
 {
 	long int	data;
 	t_list		*temp1;
@@ -76,7 +76,7 @@ int		check_twice(t_ListStack *stack)
 	return (1);
 }
 
-int		check_int_error(t_ListStack *stack_a)
+int		check_int_error(t_liststack *stack_a)
 {
 	if (check_twice(stack_a) == -1)
 	{

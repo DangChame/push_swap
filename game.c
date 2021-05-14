@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 00:11:11 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/13 13:37:56 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 22:21:49 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int		sa(t_ListStack *stack_a, int msg)
+int		sa(t_liststack *stack_a, int msg)
 {
 	t_list		*temp;
 	t_list		*temp2;
@@ -29,11 +29,11 @@ int		sa(t_ListStack *stack_a, int msg)
 	stack_a->top->next = temp;
 	temp->next = temp3;
 	if (msg == 1)
-		write(1,"sa\n", 3);
+		write(1, "sa\n", 3);
 	return (1);
 }
 
-int		sb(t_ListStack *stack_b, int msg)
+int		sb(t_liststack *stack_b, int msg)
 {
 	t_list		*temp;
 	t_list		*temp2;
@@ -50,11 +50,11 @@ int		sb(t_ListStack *stack_b, int msg)
 	stack_b->top->next = temp;
 	temp->next = temp3;
 	if (msg == 1)
-		write(1,"sb\n", 3);
+		write(1, "sb\n", 3);
 	return (1);
 }
 
-void	ss(t_ListStack *stack_a, t_ListStack *stack_b)
+void	ss(t_liststack *stack_a, t_liststack *stack_b)
 {
 	int	nb;
 	int	nb2;
@@ -65,7 +65,7 @@ void	ss(t_ListStack *stack_a, t_ListStack *stack_b)
 		write(1, "ss\n", 3);
 }
 
-void	pa(t_ListStack *stack_a, t_ListStack *stack_b)
+void	pa(t_liststack *stack_a, t_liststack *stack_b)
 {
 	long int	data;
 
@@ -73,12 +73,11 @@ void	pa(t_ListStack *stack_a, t_ListStack *stack_b)
 	{
 		data = pop_list(stack_b);
 		push_list(stack_a, data);
-		write(1,"pa\n", 3);
+		write(1, "pa\n", 3);
 	}
-
 }
 
-void	pb(t_ListStack *stack_a, t_ListStack *stack_b)
+void	pb(t_liststack *stack_a, t_liststack *stack_b)
 {
 	long int		data;
 
@@ -86,6 +85,6 @@ void	pb(t_ListStack *stack_a, t_ListStack *stack_b)
 	{
 		data = pop_list(stack_a);
 		push_list(stack_b, data);
-		write(1,"pb\n", 3);
+		write(1, "pb\n", 3);
 	}
 }
