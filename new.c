@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   new.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 18:06:47 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/14 17:20:05 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:20:44 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	move_a_to_b(int *arr, int size, t_ListStack *s_a, t_ListStack *s_b)
 	int		result_index;
 	int		temp_result_index;
 
-	
+
 	find_max_and_int(arr, size, index);
 	result[0] = index[0];
 	result[1] = index[1];
@@ -87,6 +87,42 @@ void	move_a_to_b(int *arr, int size, t_ListStack *s_a, t_ListStack *s_b)
 	if (result_index == 1 || result_index == 3)
 		rb(s_b, 1);
 }
+//this is for v5
+/* void	move_a_to_b(int *arr, int size, t_ListStack *s_a, t_ListStack *s_b)
+{
+	int		index[4];
+	int		result[4];
+	int		result_index;
+	int		temp_result_index;
+
+
+	find_max_and_int(arr, size, index);
+	result[0] = index[0];
+	result[1] = index[1];
+	result[2] = size - 1 - index[0] + 1;
+	result[3] = size - 1 - index[1] + 1;
+	result_index = find_lowest(result);
+	temp_result_index = result[result_index];
+	if (result_index == 3 || result_index == 2)
+	{
+		while (temp_result_index != 0)
+		{
+			rra(s_a, 1);
+			temp_result_index--;
+		}
+	}
+	else if (result_index == 0 || result_index == 1)
+	{
+		while (temp_result_index != 0)
+		{
+			ra(s_a, 1);
+			temp_result_index--;
+		}
+	}
+	pb(s_a, s_b);
+	if (result_index == 0 || result_index == 2)
+		rb(s_b, 1);
+} */
 
 int 	*make_int_list(t_ListStack *stack)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:31:40 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/13 15:47:27 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:11:35 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,18 +112,11 @@ t_ListStack	*make_stack(int ac, char **av)
 	if (ac == 2)
 	{
 		temp = ft_split(av[1], ' ');
-		int m = 0;
-		while (temp[m] != NULL)
-		{
-			printf("%s\n", temp[m]);
-			m++;
-		}
-		printf("temp is done\n");
+
 		index = check_nb_to_mal(av[1], ' ') - 1;
 		while (index >= 0)
 		{
 			data = ft_atoi(temp[index]);
-			printf("%ld\n", data);
 			push_list(stack, data);
 			index--;
 		}

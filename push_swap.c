@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:24:34 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/14 18:21:34 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 21:33:43 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	print_stack(t_ListStack *a, t_ListStack	*b)
 void	v1(t_ListStack *stack_a, t_ListStack *stack_b)
 {
 	int		*arr;
-	
+
 	while (is_empty_stack_list(stack_a) != 1)
 	{
 		arr = make_int_list(stack_a);
@@ -73,7 +73,7 @@ int		main(int ac, char **av)
 		return (0);
 	stack_b = create_list_stack();
 
-	v5(stack_a, stack_b);
+	v6(stack_a, stack_b);
 /* 	while (1)
 	{
 		while (is_empty_stack_list(stack_a) != 1)
@@ -87,7 +87,7 @@ int		main(int ac, char **av)
 		if (check_sorted(stack_a) == 1)
 			break ;
 	} */
-	print_stack(stack_a, stack_b);
-	delete_stack_list(stack_a);
+/* 	print_stack(stack_a, stack_b);
+ */	delete_stack_list(stack_a);
 	delete_stack_list(stack_b);
 }

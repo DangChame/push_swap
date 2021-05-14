@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/14 18:02:06 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/14 20:40:19 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,5 +140,6 @@ void		v4(t_ListStack *stack_a, t_ListStack *stack_b);
 void		move_a_to_b_1_2(t_ListStack *a, t_ListStack *b, int *par, int *nb);
 void	find_low_3_move(int *arr, t_ListStack *a, int *par);
 void	v5(t_ListStack *stack_a, t_ListStack *stack_b);
+void	v6(t_ListStack *stack_a, t_ListStack *stack_b);
 
 #endif
