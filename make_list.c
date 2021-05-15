@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:31:40 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/15 15:14:20 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 15:17:30 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ t_liststack	*make_stack(int ac, char **av)
 {
 	int			index;
 	t_liststack	*stack;
- 	char		**temp;
+	char		**temp;
 
 	index = ac - 1;
 	stack = create_list_stack();

@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 21:50:02 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/15 15:15:54 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 15:16:55 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int			make_stack3(char **temp, int index, t_liststack *stack, char **av)
 			write(2, "Error\n", 6);
 			return (-1);
 		}
-			i++;
+		i++;
 	}
 	while (index >= 0)
 	{
