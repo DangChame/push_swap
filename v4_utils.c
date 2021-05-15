@@ -6,13 +6,13 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 21:50:57 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/14 22:21:49 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 12:31:14 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	move_a_to_b_1_2(t_liststack *a, t_liststack *b, int *par, int *nb)
+void	move_a_to_b_0_1(t_liststack *a, t_liststack *b, int *par, int *nb)
 {
 	int		size;
 

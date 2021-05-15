@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/14 22:53:21 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 12:45:28 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,16 +66,8 @@ void				rra(t_liststack *stack_a, int msg);
 void				rrb(t_liststack *stack_b, int msg);
 void				rrr(t_liststack *stack_a, t_liststack *stack_b);
 
-void				sort(t_liststack *stack_a, t_liststack *stack_b);
-void				sorting_b_to_a(t_liststack *stack_a, t_liststack *stack_b);
-void				sorting_a_to_b(t_liststack *stack_a, t_liststack *stack_b);
-
 int					check_sorted(t_liststack *stack_a);
 
-t_list				*find_mid(t_liststack *stack);
-void				move_high(t_liststack *a, t_liststack *b);
-void				move_low(t_liststack *a, t_liststack *b);
-void				move_all_again(t_liststack *a);
 int					check_c(char to, char c);
 int					check_nb_to_mal(char const *s, char c);
 int					ar_mal(char const *s, char c, int index3);
@@ -85,16 +77,7 @@ int					*make_int_list(t_liststack *stack);
 void				find_max_and_int(int *arr, int size, int *index_arr);
 void				move_a_to_b(int *arr, int size, t_liststack *s_a,
 	t_liststack *s_b);
-void				max_to_top(int *arr, t_liststack *s_b);
 int					find_lowest(int *result);
-void				v2(t_liststack *stack_a, t_liststack *stack_b);
-void				move_b_to_a(int *arr, int size, t_liststack *s_a,
-	t_liststack *s_b);
-void				move_b_to_a_large(int *arr, int size, t_liststack *a,
-	t_liststack *b);
-void				move_a_to_b_small(int *arr, int size, t_liststack *a,
-	t_liststack *b);
-
 void				save_index(int *result, int size, int *index);
 
 void				quicksort(int *a, int left, int right);
@@ -102,12 +85,9 @@ void				swap(int *a, int low, int high);
 int					partition(int *a, int left, int right);
 
 void				print_stack(t_liststack *a, t_liststack	*b);
-void				v3(t_liststack *stack_a, t_liststack *stack_b);
-void				v4(t_liststack *stack_a, t_liststack *stack_b);
-void				move_a_to_b_1_2(t_liststack *a, t_liststack *b,
+void				move_a_to_b_0_1(t_liststack *a, t_liststack *b,
 	int *par, int *nb);
 void				find_low_3_move(int *arr, t_liststack *a, int *par);
-void				v5(t_liststack *stack_a, t_liststack *stack_b);
 void				v6(t_liststack *stack_a, t_liststack *stack_b);
 void				move_a_to_b_util(int ri, t_liststack *a, t_liststack *b,
 	int tri);
@@ -120,5 +100,10 @@ void				move_1_a_to_b(t_liststack *a, t_liststack *b, int *arr);
 void				move_0_a_to_b(t_liststack *a, t_liststack *b, int *arr);
 void				init_nbmoved(int *nb_moved);
 void				do_pa(t_liststack *a, t_liststack *b, int *temp);
+void				move_a_to_b(int *arr, int size, t_liststack *s_a,
+	t_liststack *s_b);
+void				exec_4_case(t_liststack *a, t_liststack *b);
+void				move_small(t_liststack *a, t_liststack *b, int *arr);
+
 
 #endif

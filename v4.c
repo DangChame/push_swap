@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 17:00:09 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/14 22:45:51 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 12:31:14 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	v6(t_liststack *stack_a, t_liststack *stack_b)
 	find_low_3_move(arr, stack_a, partion);
 	free(arr);
 	init_nbmoved(nb_moved);
-	move_a_to_b_1_2(stack_a, stack_b, partion, nb_moved);
+	move_a_to_b_0_1(stack_a, stack_b, partion, nb_moved);
 	move_2_to_b(stack_a, stack_b, arr, nb_moved);
 	rotate_2_on_b(stack_b, partion);
 	temp[0] = nb_moved[1];

@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:24:34 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/15 01:06:06 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 12:34:10 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,11 @@ int		check_small_case(t_liststack *a, t_liststack *b)
 	else if (a->size == 3)
 	{
 		exec_3_case(a);
+		return (777);
+	}
+	else if (a->size == 4)
+	{
+		exec_4_case(a, b);
 		return (777);
 	}
 	else if (a->size == 5)

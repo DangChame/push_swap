@@ -1,6 +1,6 @@
 NAME		=	push_swap
 
-sRCs		=	check_utils.c \
+SRCS		=	check_utils.c \
 				ft_atoi.c \
 				make_list.c \
 				push_swap.c \
@@ -15,18 +15,19 @@ sRCs		=	check_utils.c \
 				v4_utils.c \
 				v4_utils2.c \
 				v4_utils3.c \
+				small_case.c \
 
-OBJs	= ${sRCs:.c=.o}
+OBJS	= ${SRCS:.c=.o}
 
 INCLUDEs	=	header.h
 
 all: $(NAME)
 
-$(NAME): $(OBJs)
-	gcc -Wall -Wextra -Werror $(sRCs) -o push_swap
+$(NAME): $(OBJS)
+	gcc -Wall -Wextra -Werror $(SRCS) -o push_swap
 
 clean:
-	rm -rf $(OBJs)
+	rm -rf $(OBJS)
 
 fclean:	clean
 	rm -rf $(NAME)

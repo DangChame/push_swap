@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:31:40 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/14 22:21:49 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 13:01:31 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,26 +53,41 @@ t_liststack	*make_stack(int ac, char **av)
 	long int	data;
 	char		**temp;
 
-/* 	if (check_all_int(ac, av) == -1 || check_p_or_m_alone(ac, av) == -1)
+	if (check_all_int(ac, av) == -1 || check_p_or_m_alone(ac, av) == -1)
 	{
 		write(2, "Error\n", 6);
 		return (NULL);
-	} */
+	}
 	index = ac - 1;
 	stack = create_list_stack();
 	if (ac == 2)
 	{
 		temp = ft_split(av[1], ' ');
 		index = check_nb_to_mal(av[1], ' ') - 1;
+		int i = 0;
+		while (temp[i])
+		{
+			if (check_int(temp[i]) == -1 || p_m_alone(temp[i]) >= 2)
+			{
+				write(2, "Error22\n", 8);
+				return (NULL);
+			}
+		}
 		while (index >= 0)
 		{
 			data = ft_atoi(temp[index]);
 			push_list(stack, data);
 			index--;
 		}
+
 	}
 	else
 	{
+	if (check_all_int(ac, av) == -1 || check_p_or_m_alone(ac, av) == -1)
+		{
+			write(2, "Error\n", 6);
+			return (NULL);
+		}
 		while (index >= 1)
 		{
 			data = ft_atoi(av[index]);
