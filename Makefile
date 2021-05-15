@@ -16,6 +16,7 @@ SRCS		=	check_utils.c \
 				v4_utils2.c \
 				v4_utils3.c \
 				small_case.c \
+				make_list3.c \
 
 OBJS	= ${SRCS:.c=.o}
 

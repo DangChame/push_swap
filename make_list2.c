@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 21:50:02 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/15 15:10:00 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 15:15:54 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ long int	pop_list(t_liststack *stk)
 	stk->size -= 1;
 	return (data);
 }
+
 int			make_stack3(char **temp, int index, t_liststack *stack, char **av)
 {
 	int		data;
@@ -77,35 +78,12 @@ int			make_stack3(char **temp, int index, t_liststack *stack, char **av)
 			write(2, "Error\n", 6);
 			return (-1);
 		}
-		i++;
-		}
-		while (index >= 0)
-		{
-			data = ft_atoi(temp[index]);
-			push_list(stack, data);
-			index--;
-		}
-	return (1);
-}
-
-int			make_stack2(int ac, char **av, int index, t_liststack *s)
-{
-	int		data;
-
-	if (check_all_int(ac, av) == -1 || check_p_or_m_alone(ac, av) == -1)
-	{
-		write(2, "Error\n", 6);
-		return (-1);
+			i++;
 	}
-	while (index >= 1)
+	while (index >= 0)
 	{
-		if (check_nb_next_c(av[index]) == -1)
-		{
-			write(2, "Error\n", 6);
-			return (-1);
-		}
-		data = ft_atoi(av[index]);
-		push_list(s, data);
+		data = ft_atoi(temp[index]);
+		push_list(stack, data);
 		index--;
 	}
 	return (1);
