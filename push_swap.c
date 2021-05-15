@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:24:34 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/15 14:50:21 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 14:57:40 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,29 +73,18 @@ void	exec_5_case(t_liststack *a, t_liststack *b)
 
 int		check_small_case(t_liststack *a, t_liststack *b)
 {
-	if (a->size == 2)
+	if (2 <= a->size && a->size <= 6)
 	{
-		ra(a, 1);
-		return (777);
-	}
-	else if (a->size == 3)
-	{
-		exec_3_case(a);
-		return (777);
-	}
-	else if (a->size == 4)
-	{
-		exec_4_case(a, b);
-		return (777);
-	}
-	else if (a->size == 5)
-	{
-		exec_5_case(a, b);
-		return (777);
-	}
-	else if (a->size == 6)
-	{
-		exec_6_case(a, b);
+		if (a->size == 2)
+			ra(a, 1);
+		else if (a->size == 3)
+				exec_3_case(a);
+		else if (a->size == 4)
+			exec_4_case(a, b);
+		else if (a->size == 5)
+			exec_5_case(a, b);
+		else if (a->size == 6)
+			exec_6_case(a, b);
 		return (777);
 	}
 	return (-1);

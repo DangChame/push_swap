@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/15 14:50:30 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 15:11:23 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,9 @@ void				exec_4_case(t_liststack *a, t_liststack *b);
 void				move_small(t_liststack *a, t_liststack *b, int *arr);
 void				exec_3_case(t_liststack *a);
 void				exec_6_case(t_liststack *a, t_liststack *b);
+int					make_stack2(int ac, char **av, int index, t_liststack *s);
+int					check_nb_next_c(char *s);
+int					make_stack3(char **temp, int index, t_liststack *stack,
+	char **av);
 
 #endif
