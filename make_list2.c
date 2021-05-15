@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 21:50:02 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/15 15:19:00 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 17:55:35 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ long int	pop_list(t_liststack *stk)
 
 int			make_stack3(char **temp, int index, t_liststack *stack, char **av)
 {
-	int		data;
-	int		i;
+	long int	data;
+	int			i;
 
 	temp = ft_split(av[1], ' ');
 	index = check_nb_to_mal(av[1], ' ') - 1;

@@ -6,7 +6,7 @@
 /*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/15 15:15:28 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/15 15:15:53 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 17:55:47 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int			make_stack2(int ac, char **av, int index, t_liststack *s)
 {
-	int		data;
+	long int	data;
 
 	if (check_all_int(ac, av) == -1 || check_p_or_m_alone(ac, av) == -1)
 	{
