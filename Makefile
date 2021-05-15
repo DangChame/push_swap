@@ -19,7 +19,7 @@ SRCS		=	check_utils.c \
 
 OBJS	= ${SRCS:.c=.o}
 
-INCLUDEs	=	header.h
+INCLUDES	=	header.h
 
 all: $(NAME)
 

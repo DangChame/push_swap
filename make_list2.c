@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_list2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 21:50:02 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/14 22:21:49 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 14:51:29 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_liststack	*create_list_stack(void)
 
 	if (!(stk = (t_liststack *)malloc(sizeof(t_liststack))))
 	{
-		write(2, "malloc error\n", 13);
+		write(2, "Error malloc\n", 13);
 		return (NULL);
 	}
 	stk->top = NULL;
@@ -32,7 +32,7 @@ int			push_list(t_liststack *stk, long int data)
 
 	if (!(temp = (t_list *)malloc(sizeof(t_list))))
 	{
-		write(2, "malloc error\n", 13);
+		write(2, "Error malloc\n", 13);
 		return (-1);
 	}
 	temp->data = data;

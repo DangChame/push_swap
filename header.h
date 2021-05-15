@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchoi <cchoi@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: cchoi <cchoi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:21:46 by cchoi             #+#    #+#             */
-/*   Updated: 2021/05/15 12:45:28 by cchoi            ###   ########.fr       */
+/*   Updated: 2021/05/15 14:50:30 by cchoi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 typedef struct		s_list
 {
@@ -84,7 +83,6 @@ void				quicksort(int *a, int left, int right);
 void				swap(int *a, int low, int high);
 int					partition(int *a, int left, int right);
 
-void				print_stack(t_liststack *a, t_liststack	*b);
 void				move_a_to_b_0_1(t_liststack *a, t_liststack *b,
 	int *par, int *nb);
 void				find_low_3_move(int *arr, t_liststack *a, int *par);
@@ -104,6 +102,7 @@ void				move_a_to_b(int *arr, int size, t_liststack *s_a,
 	t_liststack *s_b);
 void				exec_4_case(t_liststack *a, t_liststack *b);
 void				move_small(t_liststack *a, t_liststack *b, int *arr);
-
+void				exec_3_case(t_liststack *a);
+void				exec_6_case(t_liststack *a, t_liststack *b);
 
 #endif
